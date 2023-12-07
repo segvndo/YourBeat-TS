@@ -1,9 +1,17 @@
-import React from 'react'
+import React from 'react';
+import Link from 'next/link';
 
 const UsersPage = () => {
   return (
-    <div>Users Page</div>
-  )
-}
+    <div>
+      <h1>Sign in as...</h1>
 
-export default UsersPage
+
+      <Link href="/">Home</Link>
+      <Link href="/users/venue">Venue</Link>
+      
+    </div>
+  );
+};
+
+export default UsersPage;

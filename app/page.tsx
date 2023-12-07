@@ -7,10 +7,10 @@ export default function Home() {
       <h1>
         YourBeat
       </h1>
-      <p>
-        Unite your music
-      </p>
-      <Link href="users">Create new account</Link>
+      <h6>
+        Simplifying your connection to the music industry
+      </h6>
+      <Link href="users" className="underline">Create new account</Link>
     </main>
   )
 }
