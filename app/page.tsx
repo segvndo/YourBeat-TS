@@ -4,8 +4,11 @@ export default function Home() {
   return (
     <main>
       <h1>
-        Hello World
+        YourBeat
       </h1>
+      <p>
+        Unite your music
+      </p>
     </main>
   )
 }
