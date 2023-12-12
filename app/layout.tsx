@@ -14,16 +14,18 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
+  
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav>
-          <ul>
+        <nav className="bg-red-500 p-2">
+          <ul className="flex space-x-4 ">
             <li>
-              <a href="/">Home</a>
+              <a href="/" className="text-gray-800 hover:text-gray-600">Home</a>
             </li>
             <li>
-              <a href="/users/venue">Venue</a>
+              <a href="/users/venue" className="text-gray-800 hover:text-gray-600">Venue</a>
             </li>
           </ul>
         </nav>
