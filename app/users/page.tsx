@@ -6,9 +6,13 @@ const UsersPage = () => {
     <div>
       <h1>Sign in as...</h1>
 
-
+      <div>
       <Link href="/">Home</Link>
+      </div>
+
+      <div>
       <Link href="/users/venue">Venue</Link>
+      </div>
       
     </div>
   );

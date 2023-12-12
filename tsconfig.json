@@ -27,7 +27,8 @@
         "./*"
       ]
     },
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": true //enforces explicit typing for all variables, ensuring that you explicitly specify the type of each variable rather than allowing TS to default to the 'any' type when it cannot determine the type
   },
   "include": [
     "next-env.d.ts",
