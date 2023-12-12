@@ -4,16 +4,33 @@ import Link from 'next/link';
 const UsersPage = () => {
   return (
     <div>
-      <h1>Sign in as...</h1>
+      <h1>Sign up as...</h1>
 
       <div>
-      <Link href="/">Home</Link>
+      <Link href="/users/venue" className="font-bold m-4">Venue</Link>
       </div>
 
       <div>
-      <Link href="/users/venue">Venue</Link>
+        <p>
+          Vendor
+        </p>
       </div>
-      
+      <div></div>
+        <p>
+          Artist
+        </p>
+      <div>
+        <p>
+          Fan
+        </p>
+      </div>
+
+      <div>
+        <p>
+          Log in
+        </p>
+      </div>
+
     </div>
   );
 };
