@@ -26,9 +26,7 @@ const UsersPage = () => {
       </div>
 
       <div>
-        <p>
-          Log in
-        </p>
+        <Link href="login">Login</Link>
       </div>
 
     </div>
