@@ -6,6 +6,7 @@ const LicensingPage = () => {
   const {
     clientName,
     clientEmail,
+    clientPassword,
     clientPhoneNumber,
     clientAddress,
     businessName,
@@ -13,6 +14,7 @@ const LicensingPage = () => {
     isSignedIn,
     handleClientNameChange,
     handleClientEmailChange,
+    handleClientPasswordChange,
     handleClientPhoneNumberChange,
     handleClientAddressChange,
     handleBusinessNameChange,
@@ -44,6 +46,18 @@ const LicensingPage = () => {
               id="clientEmail"
               value={clientEmail}
               onChange={handleClientEmailChange}
+              maxLength={30}
+              style={{ color: 'green' }}
+            />
+          </div>
+
+          <div>
+            <label htmlFor="clientPassword">Password</label>
+            <input
+              type="text"
+              id="clientPassword"
+              value={clientPassword}
+              onChange={handleClientPasswordChange}
               maxLength={30}
               style={{ color: 'green' }}
             />

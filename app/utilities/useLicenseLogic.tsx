@@ -3,13 +3,15 @@ import React, { ChangeEvent } from 'react';
 interface LicenseLogic {
   clientName: string;
   clientEmail: string;
+  clientPassword: string;
   clientPhoneNumber: number;
-  cliebtAddress: string;
+  clientAddress: string;
   businessName: string;
   businessNumber: string;
   isSignedIn: boolean;
   handleClientNameChange: (e: ChangeEvent<HTMLInputElement>) => void;
   handleClientEmailChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleClientPasswordChange: (e: ChangeEvent<HTMLInputElement>) => void;
   handleClientPhoneNumberChange: (e: ChangeEvent<HTMLInputElement>) => void;
   handleClientAddressChange: (e: ChangeEvent<HTMLInputElement>) => void;
   handleBusinessNameChange: (e: ChangeEvent<HTMLInputElement>) => void;
@@ -21,6 +23,7 @@ interface LicenseLogic {
 export const useLicenseLogic = (): LicenseLogic => {
   const [clientName, setClientName] = React.useState<string>('');
   const [clientEmail, setClientEmail] = React.useState<string>('');
+  const [clientPassword, setClientPassword] = React.useState<string>('');
   const [clientPhoneNumber, setClientPhoneNumber] = React.useState<string>('');
   const [clientAddress, setClientAddress] = React.useState<string>('');
   const [businessName, setBusinessName] = React.useState<string>('');
@@ -66,7 +69,14 @@ export const useLicenseLogic = (): LicenseLogic => {
   //   }
   // };
 
-  }
+  };
+
+  const handleClientPasswordChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const inputValue = e.target.value;
+    setClientPassword(inputValue);
+
+    const isLengthValid = inputValue.length >= 12 && inputValue.length <= 25;
+  };
 
   const handleClientPhoneNumberChange = (e: ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value;
@@ -110,6 +120,7 @@ export const useLicenseLogic = (): LicenseLogic => {
   return {
     clientName,
     clientEmail,
+    clientPassword,
     clientPhoneNumber,
     clientAddress,
     businessName,
@@ -117,6 +128,7 @@ export const useLicenseLogic = (): LicenseLogic => {
     isSignedIn,
     handleClientNameChange,
     handleClientEmailChange,
+    handleClientPasswordChange,
     handleClientPhoneNumberChange,
     handleClientAddressChange,
     handleBusinessNameChange,
