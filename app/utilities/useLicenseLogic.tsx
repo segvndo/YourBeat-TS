@@ -81,6 +81,9 @@ export const useLicenseLogic = (): LicenseLogic => {
     const hasNumber = /[0-9]/.test(inputValue);
     const hasSpecialCharacter = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/.test(inputValue);
     const hasNoSpaces = !/\s/.test(inputValue);
+
+    const isPasswordValid = isLengthValid && hasUpperCase && hasLowerCase && hasNumber && hasSpecialCharacter && hasNoSpaces;
+
   };
 
   const handleClientPhoneNumberChange = (e: ChangeEvent<HTMLInputElement>) => {
