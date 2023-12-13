@@ -2,6 +2,7 @@ import React, { ChangeEvent } from 'react';
 
 interface LicenseLogic {
   clientName: string;
+  clientEmail: string;
   businessName: string;
   businessNumber: string;
   isSignedIn: boolean;
@@ -14,6 +15,7 @@ interface LicenseLogic {
 
 export const useLicenseLogic = (): LicenseLogic => {
   const [clientName, setClientName] = React.useState<string>('');
+  const [clientEmail, setClientEmail] = React.useState<string>('');
   const [businessName, setBusinessName] = React.useState<string>('');
   const [businessNumber, setBusinessNumber] = React.useState<string>('');
   const [isSignedIn, setIsSignedIn] = React.useState<boolean>(false);
@@ -22,6 +24,11 @@ export const useLicenseLogic = (): LicenseLogic => {
     const inputValue = e.target.value;
     setClientName(inputValue);
   };
+  
+  const handleClientEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const inputValue = e.target.value;
+    setClientEmail(inputValue);
+  }
 
   const handleBusinessNameChange = (e: ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value;
@@ -44,10 +51,12 @@ export const useLicenseLogic = (): LicenseLogic => {
 
   return {
     clientName,
+    clientEmail,
     businessName,
     businessNumber,
     isSignedIn,
     handleClientNameChange,
+    handleClientEmailChange,
     handleBusinessNameChange,
     handleBusinessNumberChange,
     handleSubmit,

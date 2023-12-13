@@ -5,10 +5,12 @@ import { useLicenseLogic } from '@/app/utilities/useLicenseLogic';
 const LicensingPage = () => {
   const {
     clientName,
+    clientEmail,
     businessName,
     businessNumber,
     isSignedIn,
     handleClientNameChange,
+    handleClientEmailChange,
     handleBusinessNameChange,
     handleBusinessNumberChange,
     handleSubmit,
@@ -31,6 +33,18 @@ const LicensingPage = () => {
             style={{ color: 'green' }}
           />
 
+          <div>
+            <label htmlFor="clientEmail">Email</label>
+            <input
+              type="text"
+              id="clientEmail"
+              value={clientEmail}
+              onChange={handleClientEmailChange}
+              maxLength={30}
+              style={{ color: 'green' }}
+            />
+          </div>
+
           <label htmlFor="businessName">Business Name</label>
           <input
             type="text"
@@ -48,6 +62,7 @@ const LicensingPage = () => {
             value={businessNumber}
             onChange={handleBusinessNumberChange}
             maxLength={30}
+            style={{ color: 'green' }}
           />
 
           <div>
