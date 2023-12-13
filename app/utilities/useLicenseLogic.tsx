@@ -79,6 +79,7 @@ export const useLicenseLogic = (): LicenseLogic => {
     const hasUpperCase = /[A-Z]/.test(inputValue);
     const hasLowerCase = /[a-z]/.test(inputValue);
     const hasNumber = /[0-9]/.test(inputValue);
+    const hasSpecialCharacter = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/.test(inputValue);
   };
 
   const handleClientPhoneNumberChange = (e: ChangeEvent<HTMLInputElement>) => {
