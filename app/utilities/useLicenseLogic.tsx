@@ -78,6 +78,7 @@ export const useLicenseLogic = (): LicenseLogic => {
     const isLengthValid = inputValue.length >= 12 && inputValue.length <= 25;
     const hasUpperCase = /[A-Z]/.test(inputValue);
     const hasLowerCase = /[a-z]/.test(inputValue);
+    const hasNumber = /[0-9]/.test(inputValue);
   };
 
   const handleClientPhoneNumberChange = (e: ChangeEvent<HTMLInputElement>) => {
