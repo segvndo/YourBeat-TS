@@ -1,16 +1,18 @@
-'use client'
+'use client';
 import React from 'react';
 import { useLicenseLogic } from '@/app/utilities/useLicenseLogic';
 
 const LicensingPage = () => {
   const {
+    clientName,
     businessName,
     businessNumber,
     isSignedIn,
+    handleClientNameChange,
     handleBusinessNameChange,
     handleBusinessNumberChange,
     handleSubmit,
-    handleSignIn
+    handleSignIn,
   } = useLicenseLogic();
 
   return (
@@ -19,6 +21,16 @@ const LicensingPage = () => {
 
       {!isSignedIn ? (
         <div>
+          <label htmlFor="clientName">Full Name</label>
+          <input
+            type="text"
+            id="clientName"
+            value={clientName}
+            onChange={handleClientNameChange}
+            maxLength={30}
+            style={{ color: 'green' }}
+          />
+
           <label htmlFor="businessName">Business Name</label>
           <input
             type="text"
@@ -52,7 +64,7 @@ const LicensingPage = () => {
         </div>
       )}
     </div>
-  )
+  );
 }
 
-export default LicensingPage
+export default LicensingPage;
