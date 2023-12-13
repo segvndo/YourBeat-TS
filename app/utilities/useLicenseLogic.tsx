@@ -84,6 +84,10 @@ export const useLicenseLogic = (): LicenseLogic => {
 
     const isPasswordValid = isLengthValid && hasUpperCase && hasLowerCase && hasNumber && hasSpecialCharacter && hasNoSpaces;
 
+    if (!isPasswordValid) {
+      console.log('Invalid password');
+    };
+
   };
 
   const handleClientPhoneNumberChange = (e: ChangeEvent<HTMLInputElement>) => {
