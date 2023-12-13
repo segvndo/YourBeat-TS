@@ -7,12 +7,14 @@ const LicensingPage = () => {
     clientName,
     clientEmail,
     clientPhoneNumber,
+    clientAddress,
     businessName,
     businessNumber,
     isSignedIn,
     handleClientNameChange,
     handleClientEmailChange,
     handleClientPhoneNumberChange,
+    handleClientAddressChange,
     handleBusinessNameChange,
     handleBusinessNumberChange,
     handleSubmit,
@@ -55,6 +57,18 @@ const LicensingPage = () => {
               value={clientPhoneNumber}
               onChange={handleClientPhoneNumberChange}
               maxLength={30}
+              style={{ color: 'green' }}
+            />
+          </div>
+
+          <div>
+            <label htmlFor="clientAddress">Address</label>
+            <input
+              type="text"
+              id="clientAddress"
+              value={clientAddress}
+              onChange={handleClientAddressChange}
+              maxLength={100}
               style={{ color: 'green' }}
             />
           </div>
