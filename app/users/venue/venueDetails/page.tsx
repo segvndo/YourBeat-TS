@@ -1,3 +1,4 @@
+'use client';
 import React from 'react'
 
 const VenueDetails = () => {
@@ -14,8 +15,16 @@ const VenueDetails = () => {
 
         <p>Maximum Capacity</p>
         <input
-        type="text"
-        name="venueCapacity"
+          type="text"
+          name="venueCapacity"
+        />
+
+        <p>Venue Description</p>
+        <input
+          type="text"
+          name="venueDescription"
+          maxLength={300}
+          style={{ color: 'green', width: '300px', minHeight: '100px' }}
         />
       </div>
     </div>
