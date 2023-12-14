@@ -38,27 +38,35 @@ const VenueDetails = () => {
 
       <div>
         <p>Venue Description</p>
-        <input
-          type="text"
-          name="venueDescription"
+        
+        <textarea
+          ref = {textareaRef}
+          name = "venueDescription"
           maxLength={300}
+          value={textareaSize}
           onChange={handleTextareaSizeChange}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
           style={{
             color: 'green',
-            width: '300px',
+            width :'300px',
             minHeight: isMinimized ? '40px' : '100px',
-            resize: 'vertical'}}
-        />
+            resize: 'vertical'
+          }}
+         > </textarea>
 
-        <button
-          onClick={toggleMinimize}
-          style={{
-            marginLeft: '10px', marginTop: '5px',
-            cursor: 'pointer',
-            backgroundColor: 'green',
-          }}>
-          {isMinimized ? 'Maximize' : 'Minimize'}
-        </button>
+          <button
+            ref={buttonRef}
+            onClick={toggleMinimize}
+            style={{
+              marginLeft: '10px',
+              marginTop: '5px',
+
+            }}
+            >
+            {isMinimized ? 'Maximize' : 'Minimize'}
+          </button>
 
 
       </div>

@@ -2,15 +2,23 @@ import React, { useState, ChangeEvent, useRef } from 'react';
 
 interface useTextareaSizeLogic {
   textareaSize: string;
+  textareaHeight: string;
   handleTextareaSizeChange: (e: ChangeEvent<HTMLTextAreaElement>) => void;
-  isMinimized: boolean;
+  isResizing: boolean;
+  handleMouseDown: (e: React.MouseEvent) => void;
+  handleMouseMove: (e: React.MouseEvent) => void;
+  handleMouseUp: () => void;
   toggleMinimize: () => void;
   textareaRef: React.RefObject<HTMLTextAreaElement>;
   buttonRef:React.RefObject<HTMLButtonElement>;
 }
 
 export const useTextareaSizeLogic = (): TextareaSizeLogic => {
-  const [textareaSize, setTextareaSize] = useState<string>('');
+  const [textareaSize, setTextareaSize] = useState<{ width: string; height: string}>({
+    width: '300px',
+    height: '100px'
+  });
+
   const [isMinimized, setIsMinimized] = useState<boolean>(false);
 
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -23,8 +31,13 @@ export const useTextareaSizeLogic = (): TextareaSizeLogic => {
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (isResizing.current) {
-      const newHeight = e.clientY - textareaRef.current!.getBoundinClientRect().top;
-      textareaRef.current!.style.minHeight = `${newHeight}px`;
+      const newWidth = e.clientX - textareaRef.current!.getBoundingClientRect().left;
+      const newHeight = e.clientY - textareaRef.current!.getBoundingClientRect().top;
+
+      setTextareaSize({
+        width: `${newWidth}px`,
+        height: `${newHeight}px`
+      });
     }
   };
 
@@ -34,7 +47,10 @@ export const useTextareaSizeLogic = (): TextareaSizeLogic => {
   
 
   const handleTextareaSizeChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    setTextareaSize(e.target.value);
+    setTextareaSize({
+      width: textareaSize.width,
+      height: e.target.value,
+    })
   };
 
   const toggleMinimize = () => {
