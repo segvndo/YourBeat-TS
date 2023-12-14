@@ -6,8 +6,11 @@ const VenuePage = () => {
     <div>
       <h1 className="font-bold text-4xl antialiased">Venue Page</h1>
       {/* <p>Log in</p> */}
-      <div>
+      {/* <div>
         <Link href="venue/accountLicensing">Business Licensing</Link>
+      </div> */}
+      <div>
+        <Link href="venue/venueDetails">Venue Details</Link>
       </div>
     </div>
   )
