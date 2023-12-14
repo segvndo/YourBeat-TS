@@ -4,7 +4,7 @@ import Link from 'next/link';
 const UsersPage = () => {
   return (
     <div>
-      <h1>Sign up as...</h1>
+      <h1>Account Type</h1>
 
       <div>
       <Link href="/users/venue" className="font-bold m-4">Venue</Link>
