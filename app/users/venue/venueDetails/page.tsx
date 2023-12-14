@@ -1,10 +1,19 @@
 'use client';
 import React from 'react'
+import { useTextareaSizeLogic } from '@/app/utilities/useTextareaSizeLogic';
 
 const VenueDetails = () => {
+  const {
+    textareaSize,
+    handleTextareaSizeChange,
+    isMinimized,
+    toggleMinimize,
+  } = useTextareaSizeLogic();
   return (
     <div>
-      <h1>Venue Details</h1>
+      <h1 className="font-bold">
+        Venue Details
+      </h1>
 
       <div>
         <p>Venue Name</p>
