@@ -14,16 +14,15 @@ interface useTextareaSizeLogic {
 }
 
 export const useTextareaSizeLogic = (): TextareaSizeLogic => {
-  const [textareaSize, setTextareaSize] = useState<{ width: string; height: string}>({
-    width: '300px',
-    height: '100px'
-  });
+  const [textareaWidth, setTextareaWidth] = useState<string>('300px');
+  const [textareaHeight, setTextAreaHeight] = useState<string>('100px');
+  const [isResizing, setIsResizing] = useState<boolean>(false);
 
-  const [isMinimized, setIsMinimized] = useState<boolean>(false);
 
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const isResizing = useRef(false);
+  const startX = useRef<number>(0);
+  const startY = useRef<number>(0);
 
   const handleMouseDown = () => {
     isResizing.current = true;
