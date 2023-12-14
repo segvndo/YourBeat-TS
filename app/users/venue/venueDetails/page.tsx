@@ -11,6 +11,12 @@ const VenueDetails = () => {
           type="text"
           name="venueName"
         />
+
+        <p>Maximum Capacity</p>
+        <input
+        type="text"
+        name="venueCapacity"
+        />
       </div>
     </div>
   )
