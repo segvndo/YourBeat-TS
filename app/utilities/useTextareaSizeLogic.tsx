@@ -1,6 +1,6 @@
 import React, { useState, ChangeEvent, useRef } from 'react';
 
-interface useTextareaSizeLogic {
+interface TextareaSizeLogic {
   textareaSize: string;
   textareaHeight: string;
   handleTextareaSizeChange: (e: ChangeEvent<HTMLTextAreaElement>) => void;
@@ -15,8 +15,9 @@ interface useTextareaSizeLogic {
 
 export const useTextareaSizeLogic = (): TextareaSizeLogic => {
   const [textareaWidth, setTextareaWidth] = useState<string>('300px');
-  const [textareaHeight, setTextAreaHeight] = useState<string>('100px');
+  const [textareaHeight, setTextareaHeight] = useState<string>('100px');
   const [isResizing, setIsResizing] = useState<boolean>(false);
+  const [isMinimized, setIsMinimized] = useState<boolean>(false);
 
 
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -66,6 +67,7 @@ export const useTextareaSizeLogic = (): TextareaSizeLogic => {
     buttonRef,
     handleMouseDown,
     handleMouseMove,
-    handleMouseUp
+    handleMouseUp,
+
   }
 };

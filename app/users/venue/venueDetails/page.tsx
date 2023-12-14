@@ -14,6 +14,7 @@ const VenueDetails = () => {
     handleMouseDown,
     handleMouseMove,
     handleMouseUp
+    
   } = useTextareaSizeLogic();
   return (
     <div>
@@ -52,7 +53,7 @@ const VenueDetails = () => {
           style={{
             color: 'green',
             width: textareaWidth,
-            minHeight: '100px',
+            minHeight: isResizing ? '100px' : 'auto',
             resize: 'both',
             overflow: 'auto',
           }}
@@ -64,6 +65,8 @@ const VenueDetails = () => {
             style={{
               marginLeft: '10px',
               marginTop: '5px',
+              cursor: 'grab',
+              backgroundColor: 'grey',
 
             }}
             >
