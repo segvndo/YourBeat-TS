@@ -24,32 +24,32 @@ export const useTextareaSizeLogic = (): TextareaSizeLogic => {
   const startX = useRef<number>(0);
   const startY = useRef<number>(0);
 
-  const handleMouseDown = () => {
-    isResizing.current = true;
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsResizing(true);
+    startX.current = e.clientX;
+    startY.current = e.clientY;
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    if (isResizing.current) {
-      const newWidth = e.clientX - textareaRef.current!.getBoundingClientRect().left;
-      const newHeight = e.clientY - textareaRef.current!.getBoundingClientRect().top;
+    if (isResizing) {
+      const deltaX = e.clientX - startX.current;
+      const deltaY = e.clientY - startY.current;
 
-      setTextareaSize({
-        width: `${newWidth}px`,
-        height: `${newHeight}px`
-      });
+      setTextareaWidth(`${parseFloat(textareaWidth) + deltaX}px`);
+      setTextareaHeight(`${parseFloat(textareaHeight) + deltaY}px`);
+
+      startX.current = e.clientX;
+      startY.current = e.clientY;
     }
   };
 
   const handleMouseUp = () => {
-    isResizing.current = false;
+    setIsResizing(false);
   };
   
 
   const handleTextareaSizeChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    setTextareaSize({
-      width: textareaSize.width,
-      height: e.target.value,
-    })
+    setTextareaSize(e.target.value);
   };
 
   const toggleMinimize = () => {
@@ -57,9 +57,10 @@ export const useTextareaSizeLogic = (): TextareaSizeLogic => {
   };
 
   return {
-    textareaSize,
+    textareaWidth,
+    textareaHeight,
     handleTextareaSizeChange,
-    isMinimized,
+    isResizing,
     toggleMinimize,
     textareaRef,
     buttonRef,

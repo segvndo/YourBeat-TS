@@ -4,9 +4,10 @@ import { useTextareaSizeLogic } from '@/app/utilities/useTextareaSizeLogic';
 
 const VenueDetails = () => {
   const {
-    textareaSize,
+    textareaWidth,
+    textareaHeight,
     handleTextareaSizeChange,
-    isMinimized,
+    isResizing,
     toggleMinimize,
     textareaRef,
     buttonRef,
@@ -43,16 +44,17 @@ const VenueDetails = () => {
           ref = {textareaRef}
           name = "venueDescription"
           maxLength={300}
-          value={textareaSize}
+          value={textareaHeight}
           onChange={handleTextareaSizeChange}
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
           style={{
             color: 'green',
-            width :'300px',
-            minHeight: isMinimized ? '40px' : '100px',
-            resize: 'vertical'
+            width: textareaWidth,
+            minHeight: '100px',
+            resize: 'both',
+            overflow: 'auto',
           }}
          > </textarea>
 
@@ -65,7 +67,7 @@ const VenueDetails = () => {
 
             }}
             >
-            {isMinimized ? 'Maximize' : 'Minimize'}
+
           </button>
 
 
