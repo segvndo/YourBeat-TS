@@ -5,6 +5,7 @@ interface TextareaSizeLogic {
   textareaHeight: string;
   textareaValue: string;
   isPlaceholderVisible: boolean;
+  setIsPlaceholderVisible: React.Dispatch<React.SetStateAction<boolean>>;
   setTextareaValue: React.Dispatch<React.SetStateAction<string>>;
   handleTextareaSizeChange: (e: ChangeEvent<HTMLTextAreaElement>) => void;
   isResizing: boolean;
@@ -12,7 +13,6 @@ interface TextareaSizeLogic {
   handleMouseMove: (e: React.MouseEvent) => void;
   handleMouseUp: () => void;
   textareaRef: React.RefObject<HTMLTextAreaElement>;
-  hasStartedTyping: boolean;
   setHasStartedTyping: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
@@ -29,16 +29,18 @@ export const useTextareaSizeLogic = (): TextareaSizeLogic => {
   const startX = useRef<number>(0);
   const startY = useRef<number>(0);
 
+
   const handleMouseDown = (e: React.MouseEvent) => {
 
     const textareaRect = textareaRef.current?.getBoundingClientRect();
     const rightBottomCornerX = textareaRect?.right || 0;
     const rightBottomCornerY = textareaRect?.bottom || 0;
+    const resizeArea = 10;
 
     if (
-      e.clientX >= rightBottomCornerX - 10 &&
+      e.clientX >= rightBottomCornerX - 10 && - resizeArea &&
       e.clientX <= rightBottomCornerX &&
-      e.clientY >= rightBottomCornerY - 10 &&
+      e.clientY >= rightBottomCornerY - 10 && - resizeArea &&
       e.clientY <= rightBottomCornerY
     ) {
 
@@ -67,10 +69,7 @@ export const useTextareaSizeLogic = (): TextareaSizeLogic => {
 
   const handleTextareaSizeChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setTextareaValue(e.target.value);
-    if (!hasStartedTyping) {
-      setHasStartedTyping(true);
-      setIsPlaceholderVisible(false);
-    }
+    
   };
 
   return {
@@ -85,6 +84,6 @@ export const useTextareaSizeLogic = (): TextareaSizeLogic => {
     textareaValue,
     setTextareaValue,
     isPlaceholderVisible,
-    hasStartedTyping,
+    setIsPlaceholderVisible,
   };
 };

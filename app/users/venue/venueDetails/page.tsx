@@ -15,7 +15,7 @@ const VenueDetails = () => {
     textareaValue,
     setTextareaValue,
     isPlaceholderVisible,
-    hasStartedTyping,
+    setIsPlaceholderVisible,
   } = useTextareaSizeLogic();
 
 
@@ -50,13 +50,14 @@ const VenueDetails = () => {
           maxLength={300}
           value={textareaValue}
           onFocus={() => {
-            if (isPlaceholderVisible) {
               setTextareaValue('');
+              setIsPlaceholderVisible(false);
             }
-          }}
+          }
           onBlur={() => {
             if (textareaValue === '') {
               setTextareaValue('Provide a brief description');
+              setIsPlaceholderVisible(true);
             }
           }}
           onChange={handleTextareaSizeChange}
