@@ -8,15 +8,15 @@ const VenueDetails = () => {
     textareaHeight,
     handleTextareaSizeChange,
     isResizing,
-    toggleMinimize,
-    isMinimized,
     textareaRef,
-    buttonRef,
     handleMouseDown,
     handleMouseMove,
-    handleMouseUp
-
+    handleMouseUp,
+    textareaValue,
+    setTextareaValue,
   } = useTextareaSizeLogic();
+
+
   return (
     <div>
       <h1 className="font-bold">
@@ -46,6 +46,13 @@ const VenueDetails = () => {
           ref = {textareaRef}
           name = "venueDescription"
           maxLength={300}
+          value={textareaValue}
+          onFocus={() => setTextareaValue('')}
+          onBlur={() => {
+            if (textareaValue === '') {
+              setTextareaValue('Provide a brief description')
+            }
+          }}
           onChange={handleTextareaSizeChange}
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
@@ -57,7 +64,7 @@ const VenueDetails = () => {
             resize: 'both',
             overflow: 'auto',
           }}
-         >Description</textarea>
+         ></textarea>
 
       </div>
     </div>

@@ -3,6 +3,8 @@ import React, { useState, ChangeEvent, useRef } from 'react';
 interface TextareaSizeLogic {
   textareaSize: string;
   textareaHeight: string;
+  textareaValue: string;
+  setTextareaValue: React.Dispatch<React.SetStateAction<string>>;
   handleTextareaSizeChange: (e: ChangeEvent<HTMLTextAreaElement>) => void;
   isResizing: boolean;
   handleMouseDown: (e: React.MouseEvent) => void;
@@ -10,7 +12,7 @@ interface TextareaSizeLogic {
   handleMouseUp: () => void;
   toggleMinimize: () => void;
   textareaRef: React.RefObject<HTMLTextAreaElement>;
-  buttonRef:React.RefObject<HTMLButtonElement>;
+
 }
 
 export const useTextareaSizeLogic = (): TextareaSizeLogic => {
@@ -18,10 +20,10 @@ export const useTextareaSizeLogic = (): TextareaSizeLogic => {
   const [textareaHeight, setTextareaHeight] = useState<string>('100px');
   const [isResizing, setIsResizing] = useState<boolean>(false);
   const [isMinimized, setIsMinimized] = useState<boolean>(false);
+  const [textareaValue, setTextareaValue] = useState<string>('Provide a brief description');
 
 
   const textareaRef = useRef<HTMLTextAreaElement>(null);
-  const buttonRef = useRef<HTMLButtonElement>(null);
   const startX = useRef<number>(0);
   const startY = useRef<number>(0);
 
@@ -50,7 +52,8 @@ export const useTextareaSizeLogic = (): TextareaSizeLogic => {
   
 
   const handleTextareaSizeChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    setTextareaHeight(e.target.value);
+    setTextareaValue(e.target.value);
+
   };
 
   const toggleMinimize = () => {
@@ -62,12 +65,11 @@ export const useTextareaSizeLogic = (): TextareaSizeLogic => {
     textareaHeight: isMinimized ? 'auto' : textareaHeight,
     handleTextareaSizeChange,
     isResizing,
-    toggleMinimize,
-    isMinimized,
     textareaRef,
-    buttonRef,
     handleMouseDown,
     handleMouseMove,
     handleMouseUp,
-  }
+    textareaValue,
+    setTextareaValue,
+  };
 };
