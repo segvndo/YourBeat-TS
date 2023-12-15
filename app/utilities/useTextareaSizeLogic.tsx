@@ -1,9 +1,10 @@
 import React, { useState, ChangeEvent, useRef } from 'react';
 
 interface TextareaSizeLogic {
-  textareaSize: string;
+  textareaWidth: string;
   textareaHeight: string;
   textareaValue: string;
+  isPlaceholderVisible: boolean;
   setTextareaValue: React.Dispatch<React.SetStateAction<string>>;
   handleTextareaSizeChange: (e: ChangeEvent<HTMLTextAreaElement>) => void;
   isResizing: boolean;
@@ -11,15 +12,17 @@ interface TextareaSizeLogic {
   handleMouseMove: (e: React.MouseEvent) => void;
   handleMouseUp: () => void;
   textareaRef: React.RefObject<HTMLTextAreaElement>;
-
+  hasStartedTyping: boolean;
+  setHasStartedTyping: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const useTextareaSizeLogic = (): TextareaSizeLogic => {
   const [textareaWidth, setTextareaWidth] = useState<string>('300px');
   const [textareaHeight, setTextareaHeight] = useState<string>('100px');
   const [isResizing, setIsResizing] = useState<boolean>(false);
-  const [isMinimized, setIsMinimized] = useState<boolean>(false);
   const [textareaValue, setTextareaValue] = useState<string>('Provide a brief description');
+  const [isPlaceholderVisible, setIsPlaceholderVisible] = useState<boolean>(true);
+  const [hasStartedTyping, setHasStartedTyping] = useState<boolean>(false);
 
 
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -27,9 +30,22 @@ export const useTextareaSizeLogic = (): TextareaSizeLogic => {
   const startY = useRef<number>(0);
 
   const handleMouseDown = (e: React.MouseEvent) => {
-    setIsResizing(true);
-    startX.current = e.clientX;
-    startY.current = e.clientY;
+
+    const textareaRect = textareaRef.current?.getBoundingClientRect();
+    const rightBottomCornerX = textareaRect?.right || 0;
+    const rightBottomCornerY = textareaRect?.bottom || 0;
+
+    if (
+      e.clientX >= rightBottomCornerX - 10 &&
+      e.clientX <= rightBottomCornerX &&
+      e.clientY >= rightBottomCornerY - 10 &&
+      e.clientY <= rightBottomCornerY
+    ) {
+
+      setIsResizing(true);
+      startX.current = e.clientX;
+      startY.current = e.clientY;
+    }
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
@@ -48,13 +64,14 @@ export const useTextareaSizeLogic = (): TextareaSizeLogic => {
   const handleMouseUp = () => {
     setIsResizing(false);
   };
-  
 
   const handleTextareaSizeChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setTextareaValue(e.target.value);
-
+    if (!hasStartedTyping) {
+      setHasStartedTyping(true);
+      setIsPlaceholderVisible(false);
+    }
   };
-
 
   return {
     textareaWidth,
@@ -67,5 +84,7 @@ export const useTextareaSizeLogic = (): TextareaSizeLogic => {
     handleMouseUp,
     textareaValue,
     setTextareaValue,
+    isPlaceholderVisible,
+    hasStartedTyping,
   };
 };

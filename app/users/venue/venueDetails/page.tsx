@@ -14,6 +14,8 @@ const VenueDetails = () => {
     handleMouseUp,
     textareaValue,
     setTextareaValue,
+    isPlaceholderVisible,
+    hasStartedTyping,
   } = useTextareaSizeLogic();
 
 
@@ -43,14 +45,18 @@ const VenueDetails = () => {
         <p>Venue Description</p>
         
         <textarea
-          ref = {textareaRef}
-          name = "venueDescription"
+          ref={textareaRef}
+          name="venueDescription"
           maxLength={300}
           value={textareaValue}
-          onFocus={() => setTextareaValue('')}
+          onFocus={() => {
+            if (isPlaceholderVisible) {
+              setTextareaValue('');
+            }
+          }}
           onBlur={() => {
             if (textareaValue === '') {
-              setTextareaValue('Provide a brief description')
+              setTextareaValue('Provide a brief description');
             }
           }}
           onChange={handleTextareaSizeChange}
@@ -58,13 +64,13 @@ const VenueDetails = () => {
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
           style={{
-            color: 'green',
+            color: isPlaceholderVisible ? 'grey' : 'black',
             width: textareaWidth,
             minHeight: isResizing ? '100px' : 'auto',
             resize: 'both',
             overflow: 'auto',
           }}
-         ></textarea>
+        ></textarea>
 
       </div>
     </div>
