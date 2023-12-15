@@ -50,7 +50,7 @@ export const useTextareaSizeLogic = (): TextareaSizeLogic => {
   
 
   const handleTextareaSizeChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    setTextareaSize(e.target.value);
+    setTextareaHeight(e.target.value);
   };
 
   const toggleMinimize = () => {
@@ -58,16 +58,16 @@ export const useTextareaSizeLogic = (): TextareaSizeLogic => {
   };
 
   return {
-    textareaWidth,
-    textareaHeight,
+    textareaWidth: isMinimized ? 'auto' : textareaWidth,
+    textareaHeight: isMinimized ? 'auto' : textareaHeight,
     handleTextareaSizeChange,
     isResizing,
     toggleMinimize,
+    isMinimized,
     textareaRef,
     buttonRef,
     handleMouseDown,
     handleMouseMove,
     handleMouseUp,
-
   }
 };

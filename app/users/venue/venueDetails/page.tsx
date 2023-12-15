@@ -9,12 +9,13 @@ const VenueDetails = () => {
     handleTextareaSizeChange,
     isResizing,
     toggleMinimize,
+    isMinimized,
     textareaRef,
     buttonRef,
     handleMouseDown,
     handleMouseMove,
     handleMouseUp
-    
+
   } = useTextareaSizeLogic();
   return (
     <div>
@@ -45,7 +46,6 @@ const VenueDetails = () => {
           ref = {textareaRef}
           name = "venueDescription"
           maxLength={300}
-          value={textareaHeight}
           onChange={handleTextareaSizeChange}
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
@@ -57,22 +57,7 @@ const VenueDetails = () => {
             resize: 'both',
             overflow: 'auto',
           }}
-         > </textarea>
-
-          <button
-            ref={buttonRef}
-            onClick={toggleMinimize}
-            style={{
-              marginLeft: '10px',
-              marginTop: '5px',
-              cursor: 'grab',
-              backgroundColor: 'grey',
-
-            }}
-            >
-
-          </button>
-
+         >Description</textarea>
 
       </div>
     </div>
