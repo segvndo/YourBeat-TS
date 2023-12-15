@@ -10,7 +10,6 @@ interface TextareaSizeLogic {
   handleMouseDown: (e: React.MouseEvent) => void;
   handleMouseMove: (e: React.MouseEvent) => void;
   handleMouseUp: () => void;
-  toggleMinimize: () => void;
   textareaRef: React.RefObject<HTMLTextAreaElement>;
 
 }
@@ -56,13 +55,10 @@ export const useTextareaSizeLogic = (): TextareaSizeLogic => {
 
   };
 
-  const toggleMinimize = () => {
-    setIsMinimized(!isMinimized);
-  };
 
   return {
-    textareaWidth: isMinimized ? 'auto' : textareaWidth,
-    textareaHeight: isMinimized ? 'auto' : textareaHeight,
+    textareaWidth,
+    textareaHeight,
     handleTextareaSizeChange,
     isResizing,
     textareaRef,
