@@ -124,7 +124,7 @@ const VenueDetails = () => {
                 <li
                   key={option}
                   onClick={() => selectOption(option)}
-                  className={`cursor-pointer text-black ${
+                  className={`cursor-pointer text-black hover:bg-gray-200 ${
                     selectedOption === option ? 'text-yellow-500' : ''
                   }`}
                   
