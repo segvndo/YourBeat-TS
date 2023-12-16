@@ -72,7 +72,10 @@ const VenueDetails = () => {
             overflow: 'auto',
           }}
         ></textarea>
+      </div>
 
+      <div>
+        <h1>Venue Category</h1>
       </div>
     </div>
   )
