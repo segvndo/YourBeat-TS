@@ -96,43 +96,52 @@ const VenueDetails = () => {
       </div>
 
       <div className="relative">
-
-        <button 
-          onClick={toggleDropdown}
-          className="px-5 py-3 bg-white text-black rounded border border-r-0">
+        {selectedOption ? (
+          <button
+            onClick={toggleDropdown}
+            className="px-5 py-3 bg-yellow-500 text-black rounded border border-r-0"
+          >
+            {selectedOption}
+          </button>
+        ) : (
+          <button
+            onClick={toggleDropdown}
+            className="px-5 py-3 bg-yellow-500 text-black rounded border border-r-0"
+          >
             Choose Venue Type
           </button>
+        )}
 
         {isOpen && (
           <div
-          ref={dropdownRef}
-            className="absolute top-full left-0 mt-2 bg-white shadow-md p-4 rounded border border-t-0 border-r-0 border-1-0"
-            style={{ zIndex: 1}}>
-              <p className="font-bold mb-2">Select Venue</p>
-              <ul>
-                {venueOptions.map((option) => (
-                  <li
-                    key={option}
-                    onClick={() => selectOption(option)}
-                    className={`cursor-pointer ${
-                      selectedOption === option ? 'text-yellow-500' : ''
-                    }`}
-                  >
-                    {option}
-                  </li>
-                ))}
-              </ul>
+            ref={dropdownRef}
+            className="absolute top-full left-0 mt-2 bg-white shadow-md p-4 rounded border border-t-0 border-r-0 border-l-0"
+            style={{ zIndex: 1 }}
+          >
+            <p className="font-bold mb-2">Select Venue</p>
+            <ul>
+              {venueOptions.map((option) => (
+                <li
+                  key={option}
+                  onClick={() => selectOption(option)}
+                  className={`cursor-pointer text-black ${
+                    selectedOption === option ? 'text-yellow-500' : ''
+                  }`}
+                  
+                >
+                  {option}
+                </li>
+              ))}
+            </ul>
           </div>
-          
-
         )}
       </div>
 
-      {selectedOption && (
+      {/* {selectedOption && (
         <div className="mt-4">
           <p>Selected Venue: {selectedOption}</p>
         </div>
-      )}
+      )} */}
     </div>
   );
 };
