@@ -96,10 +96,10 @@ const VenueDetails = () => {
       </div>
 
       <div className="flex items-center relative">
-        <p className="mr-4">Choose Venue Type</p>
+        <p className="mr-4 bg-white text-black p-2">Choose Venue Type</p>
         <button
           onClick={toggleDropdown}
-          className="flex items-center px-3 py-2 bg-yellow-500 text-black rounded"
+          className="flex items-center px-3 py-2 bg-white text-black rounded"
         >
           <span className="ml-2">&#9660;</span>
         </button>
