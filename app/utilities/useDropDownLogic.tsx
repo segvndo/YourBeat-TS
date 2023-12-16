@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const DropDownLogic = () => {
-  return (
-    <div>useDropDownLogic</div>
-  )
-}
+interface DropdownLogic {
+  isOpen: boolean;
+  toggleDropdown: () => void;
+};
 
-export default DropDownLogic;
+export const useDropdownLogic = (): DropdownLogic => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
+   return {
+      isOpen,
+      toggleDropdown,
+   }
+};

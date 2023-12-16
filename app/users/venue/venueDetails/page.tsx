@@ -1,6 +1,7 @@
 'use client';
 import React from 'react'
 import { useTextareaSizeLogic } from '@/app/utilities/useTextareaSizeLogic';
+import { useDropdownLogic } from '@/app/utilities/useDropdownLogic';
 
 const VenueDetails = () => {
   const {
@@ -17,6 +18,11 @@ const VenueDetails = () => {
     isPlaceholderVisible,
     setIsPlaceholderVisible,
   } = useTextareaSizeLogic();
+
+  const {
+    isOpen,
+    toggleDropdown,
+  } = useDropdownLogic();
 
 
   return (
@@ -75,7 +81,19 @@ const VenueDetails = () => {
       </div>
 
       <div>
-        <h1>Venue Category</h1>
+        <h1 onClick={toggleDropdown}>Venue Category</h1>
+        {isOpen && (
+          <div className="dropdown-content">
+            <p>Concert Hall</p>
+            <p>Amphitheater</p>
+            <p>Stadium/Arena</p>
+            <p>Club/Bar</p>
+            <p>Coffeehouse/Listening Room</p>
+            <p>Warehouse Space</p>
+            <p>EDM Venue</p>
+            <p>Cabaret/Lounge</p>
+          </div>
+        )}
       </div>
     </div>
   )
