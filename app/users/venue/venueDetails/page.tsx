@@ -22,7 +22,20 @@ const VenueDetails = () => {
   const {
     isOpen,
     toggleDropdown,
+    selectedOption,
+    selectOption,
   } = useDropdownLogic();
+
+  const venueOptions = [
+    'Concert Hall',
+    'Amphitheater',
+    'Stadium/Arena',
+    'Club/Bar',
+    'Coffeehouse/Listening Room',
+    'Warehouse Space',
+    'EDM Venue',
+    'Cabaret/Lounge',
+  ];
 
 
   return (
@@ -80,18 +93,15 @@ const VenueDetails = () => {
         ></textarea>
       </div>
 
-      <div>
-        <h1 onClick={toggleDropdown}>Venue Category</h1>
+      <div className="relative">
+        <button 
+          onClick={toggleDropdown}
+          className="px-5 py-3 bg-yellow-500 text-white rounded">
+            Select Venue Category
+          </button>
         {isOpen && (
-          <div className="dropdown-content">
-            <p>Concert Hall</p>
-            <p>Amphitheater</p>
-            <p>Stadium/Arena</p>
-            <p>Club/Bar</p>
-            <p>Coffeehouse/Listening Room</p>
-            <p>Warehouse Space</p>
-            <p>EDM Venue</p>
-            <p>Cabaret/Lounge</p>
+          <div className="absolute top-full left-0 bg-white">
+            
           </div>
         )}
       </div>
