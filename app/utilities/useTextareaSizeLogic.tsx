@@ -31,24 +31,23 @@ export const useTextareaSizeLogic = (): TextareaSizeLogic => {
 
 
   const handleMouseDown = (e: React.MouseEvent) => {
-
     const textareaRect = textareaRef.current?.getBoundingClientRect();
     const rightBottomCornerX = textareaRect?.right || 0;
     const rightBottomCornerY = textareaRect?.bottom || 0;
     const resizeArea = 10;
-
+  
     if (
-      e.clientX >= rightBottomCornerX - 10 && - resizeArea &&
+      e.clientX >= rightBottomCornerX - 10 &&
       e.clientX <= rightBottomCornerX &&
-      e.clientY >= rightBottomCornerY - 10 && - resizeArea &&
+      e.clientY >= rightBottomCornerY - 10 &&
       e.clientY <= rightBottomCornerY
     ) {
-
       setIsResizing(true);
       startX.current = e.clientX;
       startY.current = e.clientY;
     }
   };
+  
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (isResizing) {
