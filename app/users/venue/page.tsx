@@ -10,7 +10,7 @@ const VenuePage = () => {
         <Link href="venue/accountLicensing">Business Licensing</Link>
       </div> */}
       <div>
-        <Link href="venue/venueDetails">Venue Details</Link>
+        <Link href="venue/venueDetails">Create Venue Account</Link>
       </div>
     </div>
   )
