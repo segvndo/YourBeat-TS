@@ -91,7 +91,7 @@ const VenueDetails = () => {
           aria-haspopup="true"
           onClick={toggleDropdown}
         >
-          Choose Venue Type
+          {selectedOption || 'Choose Venue Type'}
           <svg
             className="-mr-1 h-5 w-5 text-gray-400"
             viewBox="0 0 20 20"
@@ -105,6 +105,7 @@ const VenueDetails = () => {
             />
           </svg>
         </button>
+
 
         {isOpen && (
           <div
@@ -121,9 +122,8 @@ const VenueDetails = () => {
                 <a
                   key={index}
                   href="#"
-                  className={`text-gray-700 block px-4 py-2 text-sm ${
-                    selectedOption === option ? 'bg-gray-100 text-gray-900' : 'text-gray-700'
-                  }`}
+                  className={`text-gray-700 block px-4 py-2 text-sm ${selectedOption === option ? 'bg-gray-100 text-gray-900' : 'text-gray-700'
+                    }`}
                   role="menuitem"
                   tabIndex="-1"
                   onClick={() => selectOption(option)}
