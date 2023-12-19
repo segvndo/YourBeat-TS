@@ -35,15 +35,28 @@ export default function Home() {
               </li>
             </ul>
           </div>
+          <div>
+            <button className="box-content h-10 w-32 p-2 bg-green-500 rounded">Learn more</button>
+          </div>
         </div>
-        <div className="box-content h-96 w-64 p-4 border-4 bg-gray-600 flex items-start justify-center">
-          <div className="text-red-500 font-sans">Vendor</div>
-        </div>
-        <div className="box-content h-96 w-64 p-4 border-4 bg-gray-600 flex items-start justify-center">
-          <div className="text-red-500 font-sans">Artist</div>
-        </div>
-        <div className="box-content h-96 w-64 p-4 border-4 bg-gray-600 flex items-start justify-center">
-          <div className="text-red-500 font-sans">Fan</div>
+        <div className="box-content h-96 w-64 p-4 border-4 bg-gray-600 flex flex-col items-center font-sans">
+          <div className="text-red-500 font-sans mb-4">Artist</div>
+          <div>
+            <ul className="text-white pl-4 list-disc text-center">
+              <li>
+                Find merchandise vendors
+              </li>
+              <li>
+                Book live shows in reputable venues
+              </li>
+              <li>
+                Connect with you fans
+              </li>
+              <li>
+                Promote your brand
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 
