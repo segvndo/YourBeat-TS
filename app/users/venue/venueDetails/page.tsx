@@ -2,6 +2,7 @@
 import React from 'react';
 import { useTextareaSizeLogic } from '@/app/utilities/useTextareaSizeLogic';
 import { useDropdownLogic } from '@/app/utilities/useDropdownLogic';
+import Link from 'next/link';
 
 const VenueDetails = () => {
   const {
@@ -134,6 +135,20 @@ const VenueDetails = () => {
             </div>
           </div>
         )}
+      </div>
+
+      <div>
+        <button
+          type="button"
+          className="inline-flex justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+          id="menu-button"
+          aria-expanded="true"
+          aria-haspopup="true"
+          >Continue to Business Licensing
+          <div>
+            <Link href="accountLicensing">Continue to Business Licensing</Link>
+          </div>
+        </button>
       </div>
     </div>
   );
