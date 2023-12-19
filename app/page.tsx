@@ -66,16 +66,10 @@ export default function Home() {
           <div className="flex-grow">
             <ul className="text-white pl-4 list-disc text-center">
               <li>
-                Find merchandise vendors
+                Connect with artists
               </li>
               <li>
-                Book live shows in reputable venues
-              </li>
-              <li>
-                Connect with you fans
-              </li>
-              <li>
-                Promote your brand
+                Focused advertising availability with your own website
               </li>
             </ul>
           </div>
@@ -88,16 +82,13 @@ export default function Home() {
           <div className="flex-grow">
             <ul className="text-white pl-4 list-disc text-center">
               <li>
-                Find merchandise vendors
+                Find your favourite artists
               </li>
               <li>
-                Book live shows in reputable venues
+                Get recommendations for other artists
               </li>
               <li>
-                Connect with you fans
-              </li>
-              <li>
-                Promote your brand
+                Connect with you artists
               </li>
             </ul>
           </div>
