@@ -13,10 +13,10 @@ export default function Home() {
       {/* <div>
         <Image src="/images/yourbeat.png" alt="YourBeat Logo" width={300} height={500} />
       </div> */}
-      <div className="underline">
+      {/* <div className="underline">
         <Link href="login">Login</Link>
       </div>
-      <Link href="users" className="underline">Create new account</Link>
+      <Link href="users" className="underline">Create new account</Link> */}
     </main>
   )
 }
