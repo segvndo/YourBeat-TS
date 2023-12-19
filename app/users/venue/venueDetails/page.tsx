@@ -1,7 +1,7 @@
 'use client';
 import React from 'react'
 import { useTextareaSizeLogic } from '@/app/utilities/useTextareaSizeLogic';
-import { useDropdownLogic } from '@/app/utilities/useDropdownLogic';
+// import { useDropdownLogic } from '@/app/utilities/useDropdownLogic';
 
 const VenueDetails = () => {
   const {
@@ -19,25 +19,25 @@ const VenueDetails = () => {
     setIsPlaceholderVisible,
   } = useTextareaSizeLogic();
 
-  const {
-    isOpen,
-    toggleDropdown,
-    selectedOption,
-    selectOption,
-    closeDropdown,
-    dropdownRef,
-  } = useDropdownLogic();
+  // const {
+  //   isOpen,
+  //   toggleDropdown,
+  //   selectedOption,
+  //   selectOption,
+  //   closeDropdown,
+  //   dropdownRef,
+  // } = useDropdownLogic();
 
-  const venueOptions = [
-    'Concert Hall',
-    'Amphitheater',
-    'Stadium/Arena',
-    'Club/Bar',
-    'Coffeehouse/Listening Room',
-    'Warehouse Space',
-    'EDM Venue',
-    'Cabaret/Lounge',
-  ];
+  // const venueOptions = [
+  //   'Concert Hall',
+  //   'Amphitheater',
+  //   'Stadium/Arena',
+  //   'Club/Bar',
+  //   'Coffeehouse/Listening Room',
+  //   'Warehouse Space',
+  //   'EDM Venue',
+  //   'Cabaret/Lounge',
+  // ];
 
 
   return (
@@ -144,6 +144,22 @@ const VenueDetails = () => {
     </button>
     </div>
   </div>
+
+  <div class="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+    <div class="py-1" role="none">
+      <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">Concert Hall</a>
+      <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-1">Amphitheatre</a>
+    </div>
+    <div class="py-1" role="none">
+      <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Stadium/Arena</a>
+      <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-3">About</a>
+    </div>
+    <div class="py-1" role="none">
+      <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-4">Club/Bar</a>
+      <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-5">Warehouse Space</a>
+    </div>
+  </div>
+
 
     </div>
   );
