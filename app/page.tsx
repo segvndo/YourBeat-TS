@@ -19,7 +19,7 @@ export default function Home() {
       <div className="flex space-x-4">
         <div className="box-content h-96 w-64 p-4 border-4 bg-gray-600 flex flex-col items-center font-sans">
           <div className="text-red-500 font-sans mb-4">Venue</div>
-          <div>
+          <div className="flex-grow">
             <ul className="text-white pl-4 list-disc text-center">
               <li>
                 Book artists for live shows
@@ -36,12 +36,12 @@ export default function Home() {
             </ul>
           </div>
           <div>
-            <button className="box-content h-10 w-32 p-2 bg-green-500 rounded">Learn more</button>
+            <button className="box-content h-10 w-32 p-2 bg-green-500 rounded-lg">Learn more</button>
           </div>
         </div>
         <div className="box-content h-96 w-64 p-4 border-4 bg-gray-600 flex flex-col items-center font-sans">
           <div className="text-red-500 font-sans mb-4">Artist</div>
-          <div>
+          <div className="flex-grow">
             <ul className="text-white pl-4 list-disc text-center">
               <li>
                 Find merchandise vendors
@@ -56,6 +56,53 @@ export default function Home() {
                 Promote your brand
               </li>
             </ul>
+          </div>
+          <div>
+            <button className="box-content h-10 w-32 p-2 bg-green-500 rounded-lg">Learn more</button>
+          </div>
+        </div>
+        <div className="box-content h-96 w-64 p-4 border-4 bg-gray-600 flex flex-col items-center font-sans">
+          <div className="text-red-500 font-sans mb-4">Vendor</div>
+          <div className="flex-grow">
+            <ul className="text-white pl-4 list-disc text-center">
+              <li>
+                Find merchandise vendors
+              </li>
+              <li>
+                Book live shows in reputable venues
+              </li>
+              <li>
+                Connect with you fans
+              </li>
+              <li>
+                Promote your brand
+              </li>
+            </ul>
+          </div>
+          <div>
+            <button className="box-content h-10 w-32 p-2 bg-green-500 rounded-lg">Learn more</button>
+          </div>
+        </div>
+        <div className="box-content h-96 w-64 p-4 border-4 bg-gray-600 flex flex-col items-center font-sans">
+          <div className="text-red-500 font-sans mb-4">Fan</div>
+          <div className="flex-grow">
+            <ul className="text-white pl-4 list-disc text-center">
+              <li>
+                Find merchandise vendors
+              </li>
+              <li>
+                Book live shows in reputable venues
+              </li>
+              <li>
+                Connect with you fans
+              </li>
+              <li>
+                Promote your brand
+              </li>
+            </ul>
+          </div>
+          <div>
+            <button className="box-content h-10 w-32 p-2 bg-green-500 rounded-lg">Learn more</button>
           </div>
         </div>
       </div>
