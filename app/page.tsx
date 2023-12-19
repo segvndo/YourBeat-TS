@@ -17,8 +17,8 @@ export default function Home() {
         </div>
 
         <div>
-          <div>
-          Venue
+          <div className="box-content h-32 w-32 p-4 border-4 bg-gray-600 flex items-start justify-center text-red-500 font-sans">
+            Venue
           </div>
         </div>
 
