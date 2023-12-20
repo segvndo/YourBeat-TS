@@ -104,7 +104,7 @@ export default function Home() {
 
       <footer>
         <div className="flex justify-center items-center mt-6 text-red-500 font-sans mb-4 text-xl">
-          Sign Up For The YourBeat Mailing List
+          Sign Up For YourBeat Mailing List
         </div>
 
         <div>
