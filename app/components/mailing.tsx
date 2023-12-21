@@ -1,7 +1,6 @@
-// Mailing.js
 import React from "react";
 
-const Mailing = () => {
+const Mailing: React.FC  = () => {
   return (
     <footer>
       <div className="flex justify-center items-center mt-6 text-red-500 font-sans mb-4 text-xl">
