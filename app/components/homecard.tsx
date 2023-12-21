@@ -17,3 +17,5 @@ const Card = ({ title, description, buttonText, buttonLink }) => {
     </div>
   );
 };
+
+export default Card;
