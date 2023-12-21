@@ -5,7 +5,7 @@ import Card from "./components/homecard";
 
 export default function Home() {
   return (
-    <main flex flex-col items-center justify-center>
+    <main className="flex flex-col items-center justify-center">
       <h1 className="font-bold text-6xl antialiased">
         YourBeat
       </h1>
@@ -46,10 +46,10 @@ export default function Home() {
               'Promote your music',
             ]}
             buttonText="Learn more"
-            buttonLink="/users/vendor"
+            buttonLink="/users/artists"
             mainBackgroundColour="bg-yellow-400"
-            borderColour="border-yellow-400"
-            titleColour="bg-yellow-600"
+            borderColour="border-yellow-500"
+            titleColour="bg-yellow-500"
             descriptionColour="bg-gray-800">
           </Card>
         </div>

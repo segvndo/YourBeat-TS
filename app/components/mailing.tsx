@@ -3,7 +3,7 @@ import React from "react";
 const Mailing: React.FC  = () => {
   return (
     <footer>
-      <div className="flex justify-center items-center mt-6 text-red-500 font-sans mb-4 text-xl">
+      <div className="flex justify-center items-center mt-14 text-red-500 font-sans mb-4 text-xl">
         Sign Up For YourBeat Mailing List
       </div>
 
