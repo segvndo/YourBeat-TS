@@ -12,13 +12,15 @@ interface CardProps {
   titleColour?: string
 }
 
-const Card: React.FC<CardProps> = ({ title, description, buttonText, buttonLink, mainBackgroundColour, borderColour }) => {
+const Card: React.FC<CardProps> = ({ title, description, buttonText, buttonLink, mainBackgroundColour, borderColour, titleColour }) => {
   return (
-    <div className="box-content h-115 w-72 bg-green-500 pt-5 rounded-lg">
-      <div className="text-red-500 font-sans mb-4 font-semibold text-3xl flex justify-center">{title}</div>
-      <div className={`box-content h-96 w-54 p-4 border-4 ${borderColour || 'border-green-400'} flex flex-col items-center font-sans ${mainBackgroundColour}`}>
+    <div className="box-content h-100 w-72 bg-green-500 pt-5 rounded-2xl">
+      <div className={`box-content h-20 w-68 flex justify-center items-center ${titleColour || 'bg-green-700'} mt-neg rounded-t-2xl`}>
+      <div className="text-yellow-100 font-sans mb-4 font-size-10 font-semibold text-5xl flex justify-center">{title}</div>
+      </div>
+      <div className={`box-content h-96 w-54 p-4 border-4 ${borderColour || 'border-green-400'} rounded-2xl flex flex-col items-center font-sans ${mainBackgroundColour}`}>
         <div className="flex-grow">
-          <ul className="text-white pl-4 list-disc text-center font-extralight">{description.map((item, index) => (
+          <ul className="text-yellow-100 pl-4 list-disc text-center font-extralight">{description.map((item, index) => (
             <li key={index}>{item}</li>
           ))}
           </ul>
