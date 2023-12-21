@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import Mailing from './components/mailing';
 
 export default function Home() {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
         </div>
 
         <div className="flex space-x-3 flex-wrap justify-around mt-8 w-full">
-          <div className="box-content h-96 w-64 p-4 border-4 bg-gray-600 flex flex-col items-center font-sans">
+          <div className="box-content h-96 w-64 p-4 border-4 bg-gray-600 rounded-xl flex flex-col items-center font-sans">
             <div className="text-red-500 font-sans mb-4 font-semibold text-3xl">Venue</div>
             <div className="flex-grow">
               <ul className="text-white pl-4 list-disc text-center font-extralight">
@@ -102,7 +103,9 @@ export default function Home() {
         </div>
       </div>
 
-      <footer>
+      <Mailing />
+
+      {/* <footer>
         <div className="flex justify-center items-center mt-6 text-red-500 font-sans mb-4 text-xl">
           Sign Up For YourBeat Mailing List
         </div>
@@ -132,7 +135,7 @@ export default function Home() {
           <div className="flex justify-center items-center mt-3">
               <button className="box-content h-10 w-32 p-2 bg-green-500 rounded-lg m-2">Subscribe</button>
             </div>
-      </footer>
+      </footer> */}
 
     </main>
   )
