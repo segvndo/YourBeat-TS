@@ -12,8 +12,8 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ title, description, buttonText, buttonLink, mainBackgroundColour }) => {
   return (
-    <div className="box-content h-115 w-32 pt-6">
-      <div className={`box-content h-96 w-72 p-4 border-4 flex flex-col items-center font-sans ${mainBackgroundColour}`}>
+    <div className="box-content h-115 w-72 bg-green-500 pt-16 rounded-lg">
+      <div className={`box-content h-96 w-54 p-4 border-4 flex flex-col items-center font-sans ${mainBackgroundColour}`}>
         <div className="text-red-500 font-sans mb-4 font-semibold text-3xl">{title}</div>
         <div className="flex-grow">
           <ul className="text-white pl-4 list-disc text-center font-extralight">{description.map((item, index) => (
