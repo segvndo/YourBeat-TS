@@ -29,7 +29,12 @@ export default function Home() {
           ]}
           buttonText="Learn more"
           buttonLink="/users/venue"
-        />
+          mainBackgroundColour="bg-green-600">
+        </Card>
+
+
+
+
       </div>
 
       <Mailing />
