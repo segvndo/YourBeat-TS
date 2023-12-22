@@ -23,11 +23,6 @@ const Card: FC<CardProps> = ({ title, description, buttonText, buttonLink, mainB
             ))}
           </ul>
         </div>
-        {/* <div>
-          <Link href={buttonLink}>
-              <button className="box-content h-10 w-32 p-2 bg-green-500 rounded-lg">{buttonText}</button>
-          </Link>
-        </div> */}
       </div>
     </div>
   );

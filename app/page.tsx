@@ -30,7 +30,6 @@ export default function Home() {
               'Purchase tickets'
             ]}
             buttonText="Learn more"
-            buttonLink="/users/venue"
             mainBackgroundColour="bg-green-600"
             borderColour="border-green-700"
             titleColour="bg-green-700">
