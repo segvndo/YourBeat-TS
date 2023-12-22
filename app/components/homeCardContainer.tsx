@@ -6,7 +6,7 @@ type HomeCardContainerProps = {};
 const HomeCardContainer: React.FC<HomeCardContainerProps> = () => {
 
   return (
-    <div className="flex flex-row space-x-20">
+    <div className="flex flex-row space-x-10">
       <Card
         title="Artist"
         description={[
