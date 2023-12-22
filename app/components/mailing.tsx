@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "@/app/components/button";
 
 const Mailing: React.FC = () => {
   return (
@@ -12,18 +13,10 @@ const Mailing: React.FC = () => {
       </div>
 
       <div className="flex flex-row justify-center">
-        <div>
-          <button className="box-content h-10 w-32 p-2 bg-green-500 rounded-lg m-2">Venue</button>
-        </div>
-        <div>
-          <button className="box-content h-10 w-32 p-2 bg-green-500 rounded-lg m-2">Artist</button>
-        </div>
-        <div>
-          <button className="box-content h-10 w-32 p-2 bg-green-500 rounded-lg m-2">Vendor</button>
-        </div>
-        <div>
-          <button className="box-content h-10 w-32 p-2 bg-green-500 rounded-lg m-2">Fan</button>
-        </div>
+        <Button>Artist</Button>
+        <Button>Fan</Button>
+        <Button>Vendor</Button>
+        <Button>Venue</Button>
       </div>
 
       <div className="flex justify-center items-center">
