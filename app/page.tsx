@@ -29,10 +29,9 @@ export default function Home() {
               'Purchase merchandise',
               'Purchase tickets'
             ]}
-            buttonText="Learn more"
-            mainBackgroundColour="bg-green-600"
-            // borderColour="border-green-700"
-            titleColour="bg-green-700">
+            mainBackgroundColour="bg-green-500"
+            secondaryBackgroundColour="bg-green-800"
+            listBorderColour="border-green-500">
           </Card>
 
         </div>
