@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 
 interface DropdownLogic {
   isOpen: boolean;
@@ -6,11 +6,11 @@ interface DropdownLogic {
   selectedOption: string | null;
   selectOption: (option: string) => void;
   closeDropdown: () => void;
-};
+}
 
 export const useDropdownLogic = (): DropdownLogic => {
   const [isOpen, setIsOpen] = useState(false);
-  const  [selectedOption, setSelectedOption] = useState<string | null>(null);
+  const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
   const dropdownRef = useRef(null);
 
@@ -18,14 +18,14 @@ export const useDropdownLogic = (): DropdownLogic => {
     setIsOpen(!isOpen);
   };
 
-  const selectOption = (option:string) => {
+  const selectOption = (option: string) => {
     setSelectedOption(option);
     toggleDropdown();
   };
 
-  const closeDropdown = () => {
+  const closeDropdown = useCallback(() => {
     setIsOpen(false);
-  };
+  }, []); // Empty dependency array since closeDropdown does not depend on any external variables
 
   useEffect(() => {
     const handleOutsideClick = (e) => {
@@ -33,18 +33,20 @@ export const useDropdownLogic = (): DropdownLogic => {
         closeDropdown();
       }
     };
+
     document.addEventListener('click', handleOutsideClick);
+
     return () => {
       document.removeEventListener('click', handleOutsideClick);
     };
-  }, [closeDropdown])
+  }, [closeDropdown]);
 
-   return {
-      isOpen,
-      toggleDropdown,
-      selectedOption,
-      selectOption,
-      closeDropdown,
-      dropdownRef,
-   }
+  return {
+    isOpen,
+    toggleDropdown,
+    selectedOption,
+    selectOption,
+    closeDropdown,
+    dropdownRef,
+  };
 };

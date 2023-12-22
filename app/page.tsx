@@ -33,8 +33,7 @@ export default function Home() {
             buttonLink="/users/venue"
             mainBackgroundColour="bg-green-600"
             borderColour="border-green-700"
-            titleColour="bg-green-700"
-            descriptionColour="bg-gray-800">
+            titleColour="bg-green-700">
           </Card>
 
           <Card
@@ -50,7 +49,7 @@ export default function Home() {
             mainBackgroundColour="bg-yellow-400"
             borderColour="border-yellow-500"
             titleColour="bg-yellow-500"
-            descriptionColour="bg-gray-800">
+            >
           </Card>
         </div>
 
@@ -64,3 +63,4 @@ export default function Home() {
     </main>
   )
 };
+``

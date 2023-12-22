@@ -1,6 +1,6 @@
 import React from "react";
 
-const Mailing: React.FC  = () => {
+const Mailing: React.FC = () => {
   return (
     <footer>
       <div className="flex justify-center items-center mt-14 text-red-500 font-sans mb-4 text-xl">
@@ -8,7 +8,7 @@ const Mailing: React.FC  = () => {
       </div>
 
       <div>
-        YourBeat is an exciting new music network platform with a strong commitment to personal data security. Sign up for our mailing list to get notified when the web app is deployed, and we'll be sure to let you know when you can create your profile and start connecting with music industry professionals or discovering awesome new artists!
+        YourBeat is an exciting new music network platform with a strong commitment to personal data security. Sign up for our mailing list to get notified when the web app is deployed, and we&apos;ll be sure to let you know when you can create your profile and start connecting with music industry professionals or discovering awesome new artists!
       </div>
 
       <div className="flex flex-row justify-center">
