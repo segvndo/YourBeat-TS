@@ -1,7 +1,4 @@
-import Image from 'next/image';
-import Link from 'next/link';
 import Mailing from './components/mailing';
-import Card from "./components/homecard";
 import HomeCardContainer from './components/homeCardContainer';
 
 export default function Home() {
