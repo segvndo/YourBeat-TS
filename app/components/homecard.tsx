@@ -8,6 +8,7 @@ type CardProps = {
   mainBackgroundColour: string;
   secondaryBackgroundColour: string;
   listBorderColour: string;
+  outerBorder: string;
 };
 
 const Card: FC<CardProps> = ({ title, description, mainBackgroundColour, secondaryBackgroundColour, listBorderColour }) => {

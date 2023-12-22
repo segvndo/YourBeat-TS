@@ -21,6 +21,20 @@ export default function Home() {
 
         <div className="flex flex-row space-x-6">
           <Card
+            title="Artist"
+            description={[
+              'Connect with fans',
+              'Sell merchandise',
+              'Sell tickets',
+              'Connect with vendors',
+              'Connect with venues'
+            ]}
+            mainBackgroundColour="bg-green-500"
+            secondaryBackgroundColour="bg-green-800"
+            listBorderColour="border-green-500">
+          </Card>
+          
+          <Card
             title="Fan"
             description={[
               'Discover new artists',
@@ -29,10 +43,11 @@ export default function Home() {
               'Purchase merchandise',
               'Purchase tickets'
             ]}
-            mainBackgroundColour="bg-green-500"
-            secondaryBackgroundColour="bg-green-800"
-            listBorderColour="border-green-500">
+            mainBackgroundColour="bg-red-500"
+            secondaryBackgroundColour="bg-red-800"
+            listBorderColour="border-red-500">
           </Card>
+
 
         </div>
 
