@@ -26,7 +26,7 @@ const Card: FC<CardProps> = ({ title, description, mainBackgroundColour, seconda
 
           {title}
 
-          <div className={`${listBG} border-4 rounded-xl p-4 pb-60 text-lg ${listBorderColour}`} style={{ maxHeight: '100%', overflowY: 'auto' }}>
+          <div className={`${listBG} border-4 rounded-xl p-4 pb-60 text-lg ${listBorderColour}`} style={{ maxHeight: '100%', overflowY: 'auto'}}>
 
             <ul className="text-yellow-50 pl-6 list-disc text-center font-extralight">
               {description.map((item, index) => (

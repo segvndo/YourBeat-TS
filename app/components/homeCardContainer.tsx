@@ -6,7 +6,7 @@ type HomeCardContainerProps = {};
 const HomeCardContainer: React.FC<HomeCardContainerProps> = () => {
 
   return (
-    <div className="flex flex-row space-x-6">
+    <div className="flex flex-row space-x-20">
       <Card
         title="Artist"
         description={[
@@ -21,21 +21,21 @@ const HomeCardContainer: React.FC<HomeCardContainerProps> = () => {
         listBorderColour="border-green-500">
       </Card>
 
-
-      <Card
-        title="Fan"
-        description={[
-          'Discover new artists',
-          'Connect with artists',
-          'Get recommendations for other artists',
-          'Purchase merchandise',
-          'Purchase tickets'
-        ]}
-        mainBackgroundColour="bg-red-500"
-        secondaryBackgroundColour="bg-red-800"
-        listBorderColour="border-red-500">
-      </Card>
-
+      <div>
+        <Card
+          title="Fan"
+          description={[
+            'Discover new artists',
+            'Connect with artists',
+            'Get recommendations for other artists',
+            'Purchase merchandise',
+            'Purchase tickets'
+          ]}
+          mainBackgroundColour="bg-red-500"
+          secondaryBackgroundColour="bg-red-800"
+          listBorderColour="border-red-500">
+        </Card>
+      </div>
 
     </div>
   )
