@@ -36,21 +36,6 @@ export default function Home() {
             titleColour="bg-green-700">
           </Card>
 
-          <Card
-            title="Artist"
-            description={[
-              'Find merchandise vendors',
-              'Book live shows in reputable venues',
-              'Connect with fans',
-              'Promote your music',
-            ]}
-            buttonText="Learn more"
-            buttonLink="/users/artists"
-            mainBackgroundColour="bg-yellow-400"
-            borderColour="border-yellow-500"
-            titleColour="bg-yellow-500"
-            >
-          </Card>
         </div>
 
 
