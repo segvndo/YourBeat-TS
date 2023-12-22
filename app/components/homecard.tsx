@@ -8,25 +8,31 @@ type CardProps = {
   mainBackgroundColour: string;
   secondaryBackgroundColour: string;
   listBorderColour: string;
-  outerBorder: string;
 };
 
 const Card: FC<CardProps> = ({ title, description, mainBackgroundColour, secondaryBackgroundColour, listBorderColour }) => {
+
+  const outerContainerSZ = "h-96 w-64";
+  const listSize = "h-96 w-72"
+  const listBG = "bg-gray-800"
+
   return (
-    <div className="box-content h-96 w-64 pt-4">
-      <div className={`box-content h-96 w-64 p-4 flex flex-col items-center font-sans rounded-xl ${mainBackgroundColour}`}>
+    <div className={`box-content ${outerContainerSZ} pt-4`}>
+      <div className={`box-content ${outerContainerSZ} p-4 flex flex-col items-center font-sans rounded-xl ${mainBackgroundColour}`}>
 
 
-        <div className={`box-content h-96 w-72 rounded-xl text-yellow-50 font-sans font-semibold text-3xl text-center pt-2 ${secondaryBackgroundColour}`}>
+        <div className={`box-content ${listSize} rounded-xl text-yellow-50 font-sans font-semibold text-3xl text-center pt-2 ${secondaryBackgroundColour}`}>
 
           {title}
 
-          <div className={`flex-grow bg-gray-800 border-4 rounded-xl p-4 pb-60 text-lg ${listBorderColour}`}>
+          <div className={`${listBG} border-4 rounded-xl p-4 pb-60 text-lg ${listBorderColour}`}>
+
             <ul className="text-yellow-50 pl-6 list-disc text-center font-extralight">
               {description.map((item, index) => (
                 <li key={index}>{item}</li>
               ))}
             </ul>
+
           </div>
         </div>
 
