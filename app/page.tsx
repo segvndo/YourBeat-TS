@@ -31,7 +31,7 @@ export default function Home() {
             ]}
             buttonText="Learn more"
             mainBackgroundColour="bg-green-600"
-            borderColour="border-green-700"
+            // borderColour="border-green-700"
             titleColour="bg-green-700">
           </Card>
 
