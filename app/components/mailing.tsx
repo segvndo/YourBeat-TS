@@ -13,7 +13,7 @@ const Mailing: React.FC = () => {
       </div>
 
       <div className="flex flex-row justify-center">
-        <Button>Artist</Button>
+        <Button variant="green">Artist</Button>
         <Button>Fan</Button>
         <Button>Vendor</Button>
         <Button>Venue</Button>
