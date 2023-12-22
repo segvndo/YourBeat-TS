@@ -1,5 +1,6 @@
 import Mailing from './components/mailing';
 import HomeCardContainer from './components/homeCardContainer';
+import About from './components/about';
 
 export default function Home() {
   return (
@@ -8,26 +9,19 @@ export default function Home() {
         YourBeat
       </h1>
 
-      <div className="bg-black">
-        <div className="font-sans text-3xl text-red-500 font-semibold ">
-          About YourBeat
-        </div>
-
-        <div className="font-sans font-thin">
-          YourBeat is a Social Media platform which strives to connect Musical Artists, Vendors, Venues, and Fans. By assisting artists in building a strong community of thousands of dedicated fans and connecting them with vendors and venues, facilitating mutually beneficial business relationships, we strive to grow a fully sustainable environment and revolutionizing the music industry.
-        </div>
-
-        <div>
-          <HomeCardContainer />
-        </div>
 
 
-
-
+      <div>
+        <About />
       </div>
 
-      <Mailing />
+      <div>
+        <HomeCardContainer />
+      </div>
 
+      <div>
+        <Mailing />
+      </div>
     </main>
   )
 };
