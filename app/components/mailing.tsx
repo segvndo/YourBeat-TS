@@ -24,7 +24,7 @@ const Mailing: React.FC = () => {
       </div>
 
       <div className="flex justify-center items-center mt-3">
-        <button className="box-content h-10 w-32 p-2 bg-green-500 rounded-lg m-2">Subscribe</button>
+        <Button>Subscribe</Button>
       </div>
     </footer>
   );
