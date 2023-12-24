@@ -5,6 +5,16 @@ import Subscribe from "./inputSubscribe";
 
 const Mailing: React.FC = () => {
   const [subscriptionComplete, setSubscriptionComplete] = useState(false);
+  const [email, setEmail] = useState("");
+
+  const handleClick= async () => {
+    try {
+      await subscribeUser(email);
+      setSubscriptionComplete(true);
+    } catch (error) {
+      console.error("Subscription failed:", error);
+    }
+  };
 
   return (
     <footer>
