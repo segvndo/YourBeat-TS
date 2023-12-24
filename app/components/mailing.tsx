@@ -7,6 +7,8 @@ const Mailing: React.FC = () => {
   const [subscriptionComplete, setSubscriptionComplete] = useState(false);
   const [email, setEmail] = useState("");
 
+
+  // Checks if the email is not an empty string before initiating the subscription process. If the email is empty, it won't set subscriptionComplete to true
   const handleSubscribe= async () => {
     try {
       if (email.trim() !== "") {
@@ -34,7 +36,7 @@ const Mailing: React.FC = () => {
       </div>
 
       {subscriptionComplete && email ? (
-        <p>Thank you for signing up!</p>
+        <p>Thank you for signing up to YourBeat mailing list!</p>
       ) : (
         <>
 
@@ -43,6 +45,7 @@ const Mailing: React.FC = () => {
       </div>
 
 
+      {/* onClick handlers for the buttons call handleSubscribe directly to ensure the subscription process is triggered only when a button is clicked */}
       <div className="flex flex-row justify-center">
         <Button variant="green" onClick={() => handleSubscribe()}>Artist</Button>
         <Button variant="green" onClick={() => handleSubscribe()}>Fan</Button>
