@@ -4,7 +4,7 @@ import Button from "@/app/components/button";
 import Subscribe from "./inputSubscribe";
 
 const Mailing: React.FC = () => {
-
+  const [subscriptionComplete, setSubscriptionComplete] = useState(false);
 
   return (
     <footer>
