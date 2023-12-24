@@ -9,17 +9,19 @@ const Mailing: React.FC = () => {
 
   const handleSubscribe= async () => {
     try {
-      await subscribeUser(email);
-      setSubscriptionComplete(true);
+      if (email.trim() !== "") {
+        await subscribeUser(email);
+        setSubscriptionComplete(true);
+      }
     } catch (error) {
       console.error("Subscription failed:", error);
     }
   };
 
-  const subscribeUser = async (email: string) => {
+  const subscribeUser = async (userEmail: string) => {
     return new Promise<void>((resolve) => {
       setTimeout(() => {
-        console.log(`Subscribed ${email} to the mailing list`);
+        console.log(`Subscribed ${userEmail} to the mailing list`);
         resolve();
       }, 1000);
     })
@@ -31,7 +33,7 @@ const Mailing: React.FC = () => {
         Sign Up For YourBeat Mailing List
       </div>
 
-      {subscriptionComplete ? (
+      {subscriptionComplete && email ? (
         <p>Thank you for signing up!</p>
       ) : (
         <>
@@ -42,10 +44,10 @@ const Mailing: React.FC = () => {
 
 
       <div className="flex flex-row justify-center">
-        <Button variant="green" onClick={handleSubscribe}>Artist</Button>
-        <Button variant="green" onClick={handleSubscribe}>Fan</Button>
-        <Button variant="green" onClick={handleSubscribe}>Vendor</Button>
-        <Button variant="green" onClick={handleSubscribe}>Venue</Button>
+        <Button variant="green" onClick={() => handleSubscribe()}>Artist</Button>
+        <Button variant="green" onClick={() => handleSubscribe()}>Fan</Button>
+        <Button variant="green" onClick={() => handleSubscribe()}>Vendor</Button>
+        <Button variant="green" onClick={() => handleSubscribe()}>Venue</Button>
       </div>
 
       <Subscribe setEmail={setEmail} handleSubscribe={handleSubscribe} />
