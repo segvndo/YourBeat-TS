@@ -1,4 +1,7 @@
-export default function Subscribe() {
+'use client';
+import Button from '@/app/components/button';
+
+const Subscribe: React.FC = () => {
   return (
     <div>
       <div className="flex justify-center items-center">
@@ -6,8 +9,10 @@ export default function Subscribe() {
           </div>
 
           <div className="flex justify-center items-center mt-3">
-            <Button>Subscribe</Button>
+            <Button variant="green">Subscribe</Button>
           </div>
     </div>
   )
 };
+
+export default Subscribe;

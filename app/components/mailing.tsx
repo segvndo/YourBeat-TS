@@ -17,10 +17,10 @@ const Mailing: React.FC = () => {
 
 
       <div className="flex flex-row justify-center">
-        <Button>Artist</Button>
-        <Button>Fan</Button>
-        <Button>Vendor</Button>
-        <Button>Venue</Button>
+        <Button variant="green">Artist</Button>
+        <Button variant="green">Fan</Button>
+        <Button variant="green">Vendor</Button>
+        <Button variant="green">Venue</Button>
       </div>
 
     </footer>
