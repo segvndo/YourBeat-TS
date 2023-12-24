@@ -7,7 +7,7 @@ const Mailing: React.FC = () => {
   const [subscriptionComplete, setSubscriptionComplete] = useState(false);
   const [email, setEmail] = useState("");
 
-  const handleClick= async () => {
+  const handleSubscribe= async () => {
     try {
       await subscribeUser(email);
       setSubscriptionComplete(true);
@@ -16,11 +16,25 @@ const Mailing: React.FC = () => {
     }
   };
 
+  const subscribeUser = async (email: string) => {
+    return new Promise<void>((resolve) => {
+      setTimeout(() => {
+        console.log(`Subscribed ${email} to the mailing list`);
+        resolve();
+      }, 1000);
+    })
+  }
+
   return (
     <footer>
       <div className="flex justify-center items-center mt-40 text-red-500 font-sans mb-4 text-xl">
         Sign Up For YourBeat Mailing List
       </div>
+
+      {subscriptionComplete ? (
+        <p>Thank you for signing up!</p>
+      ) : (
+        <>
 
       <div>
         YourBeat is an exciting new music network platform with a strong commitment to personal data security. Sign up for our mailing list to get notified when the web app is deployed, and we'll be sure to let you know when you can create your profile and start connecting with music industry professionals or discovering awesome new artists!
@@ -28,13 +42,15 @@ const Mailing: React.FC = () => {
 
 
       <div className="flex flex-row justify-center">
-        <Button variant="green">Artist</Button>
-        <Button variant="green">Fan</Button>
-        <Button variant="green">Vendor</Button>
-        <Button variant="green">Venue</Button>
+        <Button variant="green" onClick={handleSubscribe}>Artist</Button>
+        <Button variant="green" onClick={handleSubscribe}>Fan</Button>
+        <Button variant="green" onClick={handleSubscribe}>Vendor</Button>
+        <Button variant="green" onClick={handleSubscribe}>Venue</Button>
       </div>
 
-      <Subscribe />
+      <Subscribe setEmail={setEmail} handleSubscribe={handleSubscribe} />
+      </>
+      )}
 
     </footer>
   );

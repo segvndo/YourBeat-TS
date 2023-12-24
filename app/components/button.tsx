@@ -4,14 +4,19 @@ import React, { useState } from 'react';
 type ButtonProps = {
   children: React.ReactNode;
   variant: string;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
-const Button: React.FC<ButtonProps> = ({ children, variant }) => {
+const Button: React.FC<ButtonProps> = ({ children, variant, onClick }) => {
   
   const [selected, setSelected] = useState<boolean>(false);
   
-  const handleClick = () => {
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setSelected(!selected);
+
+    if (onClick) {
+      onClick(event);
+    }
   };
 
 
