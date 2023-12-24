@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from "react";
 import Button from "@/app/components/button";
+import Subscribe from "./inputSubscribe";
 
 const Mailing: React.FC = () => {
 
@@ -22,6 +23,8 @@ const Mailing: React.FC = () => {
         <Button variant="green">Vendor</Button>
         <Button variant="green">Venue</Button>
       </div>
+
+      <Subscribe />
 
     </footer>
   );
