@@ -8,7 +8,7 @@ type SoscMediaProps = {};
 const SoscMedia: React.FC<SoscMediaProps> = () => {
   return (
     <div className="icon-container">
-      <div className="text-red-500 font-serif mb-4 text-2xl font-bold">
+      <div className="text-red-500 font-serif mb-4 ml-12 text-2xl font-bold">
         Follow Us!
       </div>
 
