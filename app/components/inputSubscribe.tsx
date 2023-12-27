@@ -1,6 +1,6 @@
 'use client';
 import React, { ChangeEvent, CSSProperties } from 'react';
-import Buttons from '@/app/components/button';
+import Buttons from '@/app/components/Button';
 
 type SubscribeProps = {
   setEmail: React.Dispatch<React.SetStateAction<string>>;

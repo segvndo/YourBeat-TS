@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from "react";
-import Buttons from "@/app/components/button";
-import Subscribe from "@/app/components/inputSubscribe";
+import Buttons from "@/app/components/Button";
+import Subscribe from "@/app/components/InputSubscribe";
 
 const Mailing: React.FC = () => {
   const [subscriptionComplete, setSubscriptionComplete] = useState(false);

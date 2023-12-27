@@ -1,6 +1,8 @@
-import Mailing from './components/mailing';
-import HomeCardContainer from './components/homeCardContainer';
-import About from './components/about';
+import Mailing from './components/Mailing';
+import HomeCardContainer from './components/HomeCardContainer';
+import About from './components/About';
+import SoscMedia from './components/SoscMedia';
+
 
 export default function Home() {
   return (
@@ -21,6 +23,10 @@ export default function Home() {
 
       <div>
         <Mailing />
+      </div>
+
+      <div>
+        <SoscMedia />
       </div>
     </main>
   )
