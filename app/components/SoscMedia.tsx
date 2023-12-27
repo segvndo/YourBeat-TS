@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram, faDiscord } from '@fortawesome/free-brands-svg-icons';
 
 
 type SoscMediaProps = {};
@@ -11,9 +11,8 @@ const SoscMedia: React.FC<SoscMediaProps> = () => {
     <div>
       Follow Us!
       <div>
-        <FontAwesomeIcon icon={faFacebook} />
-        <FontAwesomeIcon icon={faTwitter} />
         <FontAwesomeIcon icon={faInstagram} />
+        <FontAwesomeIcon icon={faDiscord} />
       </div>
     </div>
   )
