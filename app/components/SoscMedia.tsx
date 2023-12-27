@@ -7,25 +7,20 @@ type SoscMediaProps = {};
 
 const SoscMedia: React.FC<SoscMediaProps> = () => {
   return (
-    <div>
-      Follow Us!
-      <div className="icon-container">
-        <div>
-          <FontAwesomeIcon icon={faInstagram} />
-          <FontAwesomeIcon icon={faDiscord} />
-          <FontAwesomeIcon icon={faFacebook} />
-          <FontAwesomeIcon icon={faYoutube} />
-        </div>
+    <div className="icon-container">
+      <div className="text-red-500 font-serif mb-4 text-2xl font-bold">
+        Follow Us!
       </div>
-      <style jsx>{`
-        .icon-container {
-          display: flex;
-          justify-content: space-around;  // Adjust as needed
-          margin-top: 10px;  // Adjust as needed
-        }
 
-        // Additional styles as needed
-      `}</style>
+        <div>
+          <div>
+            <FontAwesomeIcon icon={faInstagram} size="2x" className="mr-4" />
+            <FontAwesomeIcon icon={faDiscord} size="2x" className="mr-4" />
+            <FontAwesomeIcon icon={faFacebook} size="2x" className="mr-4" />
+            <FontAwesomeIcon icon={faYoutube} size="2x" className="mr-4" />
+          </div>
+        </div>
+
     </div>
   );
 };
