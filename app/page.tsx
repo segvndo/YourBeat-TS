@@ -2,6 +2,7 @@ import Mailing from './components/Mailing';
 import HomeCardContainer from './components/HomeCardContainer';
 import About from './components/About';
 import SoscMedia from './components/SoscMedia';
+import HomeHeading from './components/HomeHeading';
 
 
 export default function Home() {
