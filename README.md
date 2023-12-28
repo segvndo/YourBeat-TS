@@ -15,21 +15,21 @@ npm run dev
 ```
 
 ## Dev Dependencies
-"@types/node": "^20",
-"@types/react": "^18",
-"@types/react-dom": "^18",
-"autoprefixer": "^10.0.1",
-"eslint": "^8",
-"eslint-config-next": "14.0.4",
-"postcss": "^8",
-"tailwindcss": "^3.3.0",
-"typescript": "^5"
+- "@types/node": "^20",
+- "@types/react": "^18",
+- "@types/react-dom": "^18",
+- "autoprefixer": "^10.0.1",
+- "eslint": "^8",
+- "eslint-config-next": "14.0.4",
+- "postcss": "^8",
+- "tailwindcss": "^3.3.0",
+- "typescript": "^5"
 
 ## Dependencies
-"@fortawesome/fontawesome-free": "^6.5.1",
-"@fortawesome/free-brands-svg-icons": "^6.5.1",
-"@fortawesome/react-fontawesome": "^0.2.0",
-"next": "^14.0.3",
-"react": "^18.2.0",
-"react-dom": "^18.2.0",
-"webpack": "^5.89.0"
+- "@fortawesome/fontawesome-free": "^6.5.1",
+- "@fortawesome/free-brands-svg-icons": "^6.5.1",
+- "@fortawesome/react-fontawesome": "^0.2.0",
+- "next": "^14.0.3",
+- "react": "^18.2.0",
+- "react-dom": "^18.2.0",
+- "webpack": "^5.89.0"
