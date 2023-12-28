@@ -47,7 +47,7 @@ const Mailing: React.FC<MailingProps> = () => {
       </div>
 
       <div className="pb-6">
-        YourBeat is an exciting new music network platform with a strong commitment to personal data security. Sign up for our mailing list to get notified when the web app is deployed, and we'll be sure to let you know when you can create your profile and start connecting with music industry professionals or discovering awesome new artists!
+        YourBeat is an exciting new music network platform with a strong commitment to personal data security. Choose a user type and sign up for our mailing list to get notified when the web app is deployed, and we'll be sure to let you know when you can create your profile and start connecting with music industry professionals or discovering awesome new artists!
       </div>
 
       <div>

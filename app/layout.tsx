@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav className="bg-red-500 p-2">
+        {/* <nav className="bg-red-500 p-2">
           <ul className="flex space-x-4 ">
             <li>
               <a href="/" className="font-bold text-gray-800 hover:text-gray-600">Home</a>
@@ -44,7 +44,7 @@ export default function RootLayout({
             <Link href="users">Create Account</Link>
             </li>
           </ul>
-        </nav>
+        </nav> */}
         {children}
       </body>
     </html>
