@@ -1,7 +1,7 @@
 export default function About() {
   return (
       <div className="bg-black">
-        <div className="font-sans text-3xl text-red-500 font-semibold ">
+        <div className=" mt-14 font-sans text-3xl text-red-500 font-semibold ">
           About YourBeat
         </div>
 

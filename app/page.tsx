@@ -9,7 +9,6 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center justify-center">
       <h1 className="font-bold text-6xl antialiased">
-        YourBeat
         <HomeHeading />
       </h1>
 
