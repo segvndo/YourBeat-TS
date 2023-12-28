@@ -29,7 +29,7 @@ const Mailing: React.FC<MailingProps> = () => {
   const handleSubscribe = async (email: string) => {
     try {
       if (selectedRoles.length > 0 && email.trim() !== '') {
-        // Your subscription logic here (if needed)
+        
         console.log(`Subscribed with email: ${email}`);
         setSubscriptionComplete(true);
       } else {
