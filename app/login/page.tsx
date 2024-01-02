@@ -25,8 +25,8 @@ const Login: React.FC<LoginProps> = () => {
 
   return (
     <div className="auth-form-container">
-      <h2 >Login</h2>
-      <div className="login-form">
+      <h2 className="text-3xl flex flex-center justify-center mb-4">Login</h2>
+      <div className="login-form flex flex-center justify-center">
         <label htmlFor="username">Username</label>
         <input value={username} onChange={(e) => setUsername(e.target.value)} type="text" placeholder="Username" id="username" name="username" />
         <label htmlFor="password">Password</label>
@@ -34,7 +34,7 @@ const Login: React.FC<LoginProps> = () => {
         <button onClick={handleSubmit}>Login</button>
       </div>
       &nbsp;
-      <Link href="/register" >Don't have an account? Sign Up</Link>
+      <Link href="/register" className="login-form flex flex-center justify-center">Don't have an account? Sign Up</Link>
     </div>
   )
 }
