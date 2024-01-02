@@ -1,18 +1,17 @@
 import React from 'react'
 
-const Login = () => {
+const Login: React.FC<LoginProps> = () => {
   return (
     <div>
       <p>Login</p>
 
-      <div>
-        <p>Username</p>
-        <input type="text" name="username" />
-      </div>
-      <div>
-        <p>Password</p>
+      <form>
+        <label htmlFor="email">Email</label>
+        <input type="email" name="email" />
+
+        <label htmlFor="password">Password</label>
         <input type="password" name="password" />
-      </div>
+      </form>
     </div>
   )
 }
