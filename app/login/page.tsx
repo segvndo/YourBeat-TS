@@ -9,7 +9,7 @@ const Login: React.FC<LoginProps> = () => {
   const [password, setPassword] = React.useState('')
   const handleSubmit = async () => {
     try {
-      const response = await fetch('http://localhost:4000/auth/login', {
+      const response = await fetch('http://localhost:3000/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -39,4 +39,4 @@ const Login: React.FC<LoginProps> = () => {
   )
 }
 
-export default Login
+export default Login;
