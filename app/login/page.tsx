@@ -28,9 +28,9 @@ const Login: React.FC<LoginProps> = () => {
       <h2 className="text-3xl flex flex-center justify-center mb-4">Login</h2>
       <div className="login-form flex flex-col items-center">
         <label htmlFor="username">Username</label>
-        <input value={username} onChange={(e) => setUsername(e.target.value)} type="text" placeholder="Username" id="username" name="username" className="box-container h-8 w-24" />
+        <input value={username} onChange={(e) => setUsername(e.target.value)} type="text" placeholder="Username" id="username" name="username" className="box-container h-8 w-28 pl-2 rounded-md" />
         <label htmlFor="password">Password</label>
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="*******" id="password" name="password" className="box-container h-8 w-24"/>
+        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="*******" id="password" name="password" className="box-container h-8 w-28 pl-2 rounded-md"/>
         <button onClick={handleSubmit} className="box-container h-8 w-14 bg-white text-black rounded-lg">Login</button>
       </div>
       &nbsp;
