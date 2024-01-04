@@ -20,7 +20,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} flex flex-col min-h-screen`}>
         {/* <nav className="bg-red-500 p-2">
           <ul className="flex space-x-4 ">
             <li>
@@ -45,11 +45,14 @@ export default function RootLayout({
             <Link href="users">Create Account</Link>
             </li>
           </ul>
+        
         </nav> */}
+        <div className="content flex-grow">
+        {children}
+        </div>
         <footer style={{ marginTop: 'auto', paddingTop: '20px', backgroundColor: '#f0f0f0' }}>
           <SoscMedia />
         </footer>
-        {children}
       </body>
     </html>
   )
