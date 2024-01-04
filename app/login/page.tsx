@@ -31,7 +31,7 @@ const Login: React.FC<LoginProps> = () => {
         <input value={username} onChange={(e) => setUsername(e.target.value)} type="text" placeholder="Username" id="username" name="username" className="box-container h-8 w-28 pl-2 rounded-md" />
         <label htmlFor="password">Password</label>
         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="*******" id="password" name="password" className="box-container h-8 w-28 pl-2 rounded-md"/>
-        <button onClick={handleSubmit} className="box-container h-8 w-14 bg-white text-black rounded-lg">Login</button>
+        <button onClick={handleSubmit} className="box-container h-8 w-14 bg-white text-black rounded-lg mt-4">Login</button>
       </div>
       &nbsp;
       <Link href="/register" className="login-form flex flex-center justify-center">Don't have an account? Sign Up</Link>

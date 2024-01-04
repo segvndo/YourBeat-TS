@@ -26,9 +26,9 @@ export default function Home() {
         <Mailing />
       </div>
 
-      <div>
+      {/* <div>
         <SoscMedia />
-      </div>
+      </div> */}
     </main>
   )
 };
